@@ -78,7 +78,6 @@ create() {
     this.input.on('dragend', function (_pointer: any, gameObject: { clearTint: () => void; }) {
       gameObject.clearTint();
     });
-
     // FOR POPUP
     this.recipeBtn = this.add.image(50, 500, "recipe");
     this.recipeBtn.setScale(.25)
