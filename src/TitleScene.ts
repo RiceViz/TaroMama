@@ -12,13 +12,31 @@ export default class TitleScene extends Phaser.Scene {
 		this.load.image("title", "assets/backgrounds/titlescene/titleText.png");
 		this.load.image("play", "assets/backgrounds/titlescene/playText.png");
 		this.load.image("how", "assets/backgrounds/titlescene/howText.png");
+		this.load.audio("clicksound", ["assets/sounds/mixkit-select-click-1109.wav"]);
+		this.load.audio("jazz1", ["assets/sounds/mixkit-chill-bro-494.mp3"]);
+		this.load.audio("completedRecipe", ["assets/sounds/mixkit-instant-win-2021.wav"]);
+		this.load.audio("sceneCompletion", ["assets/sounds/mixkit-video-game-treasure-2066.wav"]);
+		this.load.audio("levelCompletion", ["assets/sounds/mixkit-game-level-completed-2059.wav"]);
+
+		//for mute button
+		this.load.image('mute', 'assets/buttons/mute.png')
+		//for unmute button
+		this.load.image('unmute', 'assets/buttons/unmute.png')
+		
 	}
 
 	create() {
+		//jazz background
+		const music1 = this.sound.add("jazz1", {
+			volume: .2,
+			loop: true,
+		})
+		music1.play();
+
 		//kitchen background
 		const scaledKicthen = this.add.image(400, 300, "kitchen"); //1280 800
 		scaledKicthen.displayWidth = Number(main.config.width);
-		scaledKicthen.scaleY = scaledKicthen.scaleX;
+		scaledKicthen.displayHeight = Number(main.config.height);
 
 		//Taro Mama title
 		const scaledTitle = this.add.image(400, 150, "title"); //1280 350
@@ -38,11 +56,37 @@ export default class TitleScene extends Phaser.Scene {
 		scaledHow.scaleY = scaledPlay.scaleX;
         scaledHow.setInteractive({ useHandCursor: true });
         scaledHow.on('pointerdown', () => this.clickHow());
-	}	
+
+		// -------------------------------- MUTE BUTTON --------------------------------
+
+		const muteBtn = this.add.image(700,550, 'mute');
+		muteBtn.scale = .05
+		muteBtn.setInteractive()
+
+		//on mute button pushed
+		muteBtn.on('pointerdown', () => {
+			main.sound.mute = true;
+		});
+		// -------------------------------- END MUTE BUTTON --------------------------------
+
+		// -------------------------------- UNMUTE BUTTON --------------------------------
+
+		const unmuteBtn = this.add.image(750,550, 'unmute');
+		unmuteBtn.scale = .05
+		unmuteBtn.setInteractive()
+
+		//on mute button pushed
+		unmuteBtn.on('pointerdown', () => {
+			main.sound.mute = false;
+		});
+		// -------------------------------- END UNMUTE BUTTON --------------------------------
+
+	} // end create function	
 		clickPlay() {
-			this.scene.switch("GradeOrder");
+			this.scene.switch("recipe-scene");
 		}
 		clickHow() {
 			this.scene.switch("instr-scene");
 		}
-}
+
+	}
