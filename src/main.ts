@@ -1,12 +1,18 @@
 import Phaser from 'phaser'
-import popupScene from './popupScene'
+import InstrScene from './InstrScene';
+import TitleScene from './TitleScene'
+import RecipeScene from './RecipeScene';
+import MusubiScene from './MusubiScene';
+import MusubiScene2 from './MusubiScene2';
+import MusubiScene3 from './MusubiScene3';
 
-const DEFAULT_WIDTH = 2560; 
-const DEFAULT_HEIGHT = 1600; 
+const DEFAULT_WIDTH = 800; //2560
+const DEFAULT_HEIGHT = 600; //1600
 
 const config: Phaser.Types.Core.GameConfig = {
 	type: Phaser.AUTO,
 	parent: 'app', 
+	backgroundColor: 0xFFFFFF,
 	scale: {
 		mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH,
@@ -19,7 +25,7 @@ const config: Phaser.Types.Core.GameConfig = {
 			gravity: { y: 0 },
 		},
 	},
-	scene: [popupScene],
+	scene: [TitleScene, RecipeScene, MusubiScene, MusubiScene2, MusubiScene3, InstrScene],
 }
 
 export default new Phaser.Game(config)
