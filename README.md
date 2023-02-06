@@ -9,3 +9,5 @@ Carley Williamson: Created popup demo for the recipe page (also will be used for
 
 Tyran Rice: Added music and interactive sound to the game and also a way to combine ingredients to create the final product (musubi). Also created the pixel art for the musubi
 
+The deployed page currently does not work. You can use this link instead: https://tdolbow.github.io/Taro-Mama/
+
