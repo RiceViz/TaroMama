@@ -2,6 +2,7 @@ import Phaser from 'phaser'
 import main from './main';
 
 export default class TitleScene extends Phaser.Scene {
+		
 	constructor() {
 		super('title-scene')
 	}
