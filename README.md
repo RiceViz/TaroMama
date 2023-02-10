@@ -1,13 +1,11 @@
 # Taro Mama
 This is the alpha game state for our game Taro Mama
+This game was created in the span of 2.5 weeks in Hawaii for a study abroad trip with a team of 5 members. I hope you enjoy this short game!
 
-Components:
-
-Grace O'Leary: Created, scaled, and added graphics for game use - ingredient list and table for cooking
-
-Carley Williamson: Created popup demo for the recipe page (also will be used for the help function). This can also be done using containers, which may be done for the MVP or later in development for a better final product. 
-
-Tyran Rice: Added music and interactive sound to the game and also a way to combine ingredients to create the final product (musubi). Also created the pixel art for the musubi
-
-The deployed page currently does not work. You can use this link instead: https://tdolbow.github.io/Taro-Mama/
+Credits:
+- Trevor Dolbow
+- Grace O'Leary
+- William Hart
+- Carley Williamson
+- Tyran Rice Jr (me)
 
